@@ -290,7 +290,12 @@ export function DynamicIslandTOC({
                         {h.text}
                       </span>
 
-
+                      <motion.div
+                        initial={false}
+                        animate={{ scale: isActive ? 1 : 0, opacity: isActive ? 1 : 0 }}
+                        transition={{ duration: 0.3, ease: "easeOut" }}
+                        className="ml-3 h-1.5 w-1.5 shrink-0 rounded-full bg-foreground"
+                      />
                     </button>
                   );
                 })}
