@@ -1044,6 +1044,28 @@
         opacity: 1;
       }
 
+      .service-card-image-wrap {
+        width: 100%;
+        height: 180px;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 24px;
+        border: 1px solid var(--border-subtle);
+        position: relative;
+        background: rgba(0, 0, 0, 0.03);
+      }
+
+      .service-card-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .service-card:hover .service-card-image {
+        transform: scale(1.08);
+      }
+
       .service-name {
         font-family: var(--serif);
         font-size: 1.85rem;
@@ -2447,6 +2469,13 @@
                 stroke-width="1.5"
               />
             </svg>
+            <div class="service-card-image-wrap">
+              <img
+                src="images/service_ai.png"
+                alt="AI Solutions for Business"
+                class="service-card-image"
+              />
+            </div>
             <div class="service-name">AI Solutions<br />for Business</div>
             <p class="service-desc">
               Implementing AI-driven systems to scale your operations,
@@ -2484,6 +2513,13 @@
               />
               <circle cx="20" cy="18" r="3" fill="currentColor" />
             </svg>
+            <div class="service-card-image-wrap">
+              <img
+                src="images/service_content.png"
+                alt="Content & Social Media"
+                class="service-card-image"
+              />
+            </div>
             <div class="service-name">Content /<br />Social Media</div>
             <p class="service-desc">
               Build authority where your buyers spend their time. Long-form
@@ -2530,6 +2566,13 @@
                 stroke-width="1.2"
               />
             </svg>
+            <div class="service-card-image-wrap">
+              <img
+                src="images/service_automation.png"
+                alt="Inbound & Outbound Automations"
+                class="service-card-image"
+              />
+            </div>
             <div class="service-name">Inbound & Outbound<br />Automations</div>
             <p class="service-desc">
               Behavioral sequences and automated funnels that move leads through
@@ -2569,6 +2612,13 @@
               <circle cx="8" cy="28" r="2" fill="currentColor" />
               <circle cx="32" cy="12" r="2" fill="currentColor" />
             </svg>
+            <div class="service-card-image-wrap">
+              <img
+                src="images/service_analytics.png"
+                alt="Performance Analysis & Growth Strategy"
+                class="service-card-image"
+              />
+            </div>
             <div class="service-name">
               Performance Analysis<br />& Growth Strategy
             </div>
@@ -2740,7 +2790,7 @@
         <div class="about reveal">
           <div class="about-visual">
             <img
-              src="about_growth_visual.png"
+              src="images/about_growth_visual.png"
               class="about-img"
               alt="Detailed chart showing compounding organic pipeline growth with 3.2x traffic increase over 6 months"
             />
