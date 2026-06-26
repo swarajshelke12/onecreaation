@@ -1,4 +1,4 @@
-﻿*,
+*,
 *::before,
 *::after {
   margin: 0;
@@ -1610,6 +1610,22 @@ section {
   color: var(--accent-1);
   background: #ffffff;
   padding: 0 6px;
+  transform: translateY(-50%) translateX(-4px);
+}
+
+.form-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.textarea-group .form-label {
+  top: 22px;
+  transform: translateY(-50%);
+}
+
+.form-textarea:focus ~ .form-label,
+.form-textarea:not(:placeholder-shown) ~ .form-label {
+  top: 0;
   transform: translateY(-50%) translateX(-4px);
 }
 

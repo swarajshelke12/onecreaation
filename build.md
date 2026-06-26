@@ -104,7 +104,7 @@ Self-contained IIFE for the gravity physics canvas:
 - **Fields Collected**:
   - `name`: User's full name (required, min 2 chars)
   - `email`: User's contact email (required, format-validated)
-  - `website`: Company website URL (required)
+  - `problem`: Detailed problem the client is facing (required, min 5 chars, textarea)
   - `phone`: Optional contact number
   - `focus`: Primary channel selection (Step 2)
   - `submittedAt`: ISO timestamp of form submission

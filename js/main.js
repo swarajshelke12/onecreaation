@@ -170,13 +170,13 @@ if (nextStepBtn) {
   nextStepBtn.addEventListener("click", () => {
     const name = document.getElementById("formName");
     const email = document.getElementById("formEmail");
-    const website = document.getElementById("formWebsite");
+    const problem = document.getElementById("formProblem");
     const phone = document.getElementById("formPhone");
-    if (name && email && website && phone) {
+    if (name && email && problem && phone) {
       if (
         name.reportValidity() &&
         email.reportValidity() &&
-        website.reportValidity() &&
+        problem.reportValidity() &&
         phone.reportValidity()
       ) {
         if (step1) step1.style.display = "none";
@@ -228,7 +228,7 @@ function isHoneypotFilled() {
 // ============================================================
 
 // Configure your n8n Webhook URL here
-const N8N_WEBHOOK_URL = "";
+const N8N_WEBHOOK_URL = "http://localhost:5678/webhook-test/swaraj";
 
 if (leadForm) {
   leadForm.addEventListener("submit", (e) => {
@@ -262,7 +262,7 @@ if (leadForm) {
 
     const nameVal = document.getElementById("formName")?.value || "";
     const emailVal = document.getElementById("formEmail")?.value || "";
-    const websiteVal = document.getElementById("formWebsite")?.value || "";
+    const problemVal = document.getElementById("formProblem")?.value || "";
     const phoneVal = document.getElementById("formPhone")?.value || "";
 
     // Basic payload validation
@@ -272,6 +272,10 @@ if (leadForm) {
     }
     if (!isValidEmail(emailVal)) {
       alert("Please enter a valid email address.");
+      return;
+    }
+    if (problemVal.trim().length < 5) {
+      alert("Please describe the detailed problem you are facing (at least 5 characters).");
       return;
     }
 
@@ -286,7 +290,7 @@ if (leadForm) {
     const payload = {
       name: nameVal,
       email: emailVal,
-      website: websiteVal,
+      problem: problemVal,
       phone: phoneVal,
       focus: chosenFocus,
       submittedAt: new Date().toISOString(),
